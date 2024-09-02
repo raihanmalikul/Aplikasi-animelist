@@ -1,10 +1,10 @@
-// src/components/SearchResults.js
-import React, { useState } from 'react'; // Import useState
+
+import React, { useState } from 'react'; 
 import { useQuery } from '@apollo/client';
 import { gql } from 'graphql-tag';
 import { useLocation } from 'react-router-dom';
 import DOMPurify from 'dompurify';
-import AnimeModal from './AnimeModal'; // Import komponen modal
+import AnimeModal from './AnimeModal'; 
 import './AnimeList.css';
 
 const SEARCH_ANIME = gql`
@@ -32,7 +32,7 @@ const SearchResults = () => {
   const queryParams = new URLSearchParams(location.search);
   const query = queryParams.get('query') || '';
 
-  const [selectedAnime, setSelectedAnime] = useState(null); // State untuk anime yang dipilih
+  const [selectedAnime, setSelectedAnime] = useState(null); 
 
   const { loading, error, data } = useQuery(SEARCH_ANIME, {
     variables: { query },
@@ -53,7 +53,7 @@ const SearchResults = () => {
           <div 
             key={anime.id} 
             className="anime-card"
-            onClick={() => setSelectedAnime(anime)} // Setel anime yang dipilih saat card diklik
+            onClick={() => setSelectedAnime(anime)} 
           >
             <img src={anime.coverImage.large} alt={anime.title.romaji} className="anime-card-image" />
             <div className="anime-card-content">
@@ -68,7 +68,6 @@ const SearchResults = () => {
         ))}
       </div>
 
-      {/* Tampilkan Modal jika anime dipilih */}
       {selectedAnime && <AnimeModal anime={selectedAnime} onClose={() => setSelectedAnime(null)} />}
     </div>
   );

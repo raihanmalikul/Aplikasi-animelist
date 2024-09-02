@@ -1,25 +1,25 @@
-// src/components/AnimeModal.js
+
 import React from 'react';
-import DOMPurify from 'dompurify'; // Import DOMPurify untuk membersihkan HTML
-import './AnimeModal.css'; // Import CSS khusus untuk modal
+import DOMPurify from 'dompurify'; 
+import './AnimeModal.css'; 
 
 const AnimeModal = ({ anime, onClose }) => {
-  if (!anime) return null; // Jika tidak ada anime yang dipilih, jangan tampilkan modal
+  if (!anime) return null; 
 
-  // Fungsi untuk membersihkan deskripsi anime
+ 
   const cleanDescription = (description) => {
     let sanitizedDescription = DOMPurify.sanitize(description, {
-      ALLOWED_TAGS: [], // Menghapus semua tag HTML
+      ALLOWED_TAGS: [], 
     });
 
-    // Gantikan tag HTML tertentu dengan teks biasa
-    sanitizedDescription = sanitizedDescription.replace(/<br\s*\/?>/gi, '\n'); // Menggantikan <br> dengan newline
-    sanitizedDescription = sanitizedDescription.replace(/<\/?i>/gi, ''); // Menghapus tag <i>
+    
+    sanitizedDescription = sanitizedDescription.replace(/<br\s*\/?>/gi, '\n'); 
+    sanitizedDescription = sanitizedDescription.replace(/<\/?i>/gi, ''); 
 
     return sanitizedDescription;
   };
 
-  // Bangun URL Anime menggunakan ID anime dari AniList
+  
   const animeUrl = `https://anilist.co/anime/${anime.id}`;
 
   return (
@@ -34,12 +34,11 @@ const AnimeModal = ({ anime, onClose }) => {
         </div>
         <div className="p-4 flex flex-col justify-between">
         <h2>{anime.title.romaji}</h2>
-        <p><strong>Description:</strong> {cleanDescription(anime.description)}</p> {/* Menggunakan cleanDescription */}
+        <p><strong>Description:</strong> {cleanDescription(anime.description)}</p> 
         <p><strong>Episodes:</strong> {anime.episodes}</p>
         <p><strong>Genres:</strong> {anime.genres ? anime.genres.join(', ') : 'N/A'}</p>
         <p><strong>Status:</strong> {anime.status}</p>
         <p><strong>Rating:</strong> {anime.averageScore}</p>
-        {/* Tampilkan Link URL Anime */}
         <p><strong>Link:</strong> <a href={animeUrl} target="_blank" rel="noopener noreferrer">{animeUrl}</a></p>
         </div>
       </div>

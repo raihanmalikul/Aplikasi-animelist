@@ -1,15 +1,15 @@
-// src/components/Footer.js
+
 import React, { useState } from 'react';
-import './Footer.css'; // Styling khusus untuk footer
+import './Footer.css'; 
 
 const Footer = () => {
-  // State untuk mengelola tema
+  
   const [theme, setTheme] = useState('default');
 
-  // Fungsi untuk mengubah tema
+  
   const handleThemeChange = (newTheme) => {
-    setTheme(newTheme); // Setel state tema
-    document.body.setAttribute('data-theme', newTheme); // Setel atribut tema pada elemen body
+    setTheme(newTheme); 
+    document.body.setAttribute('data-theme', newTheme); 
   };
 
   return (

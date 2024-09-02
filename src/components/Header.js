@@ -1,6 +1,6 @@
-// src/components/Header.js
+
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link dari react-router-dom
+import { Link, useNavigate } from 'react-router-dom'; 
 import './Header.css';
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-content">
-        {/* Gunakan Link untuk membuat logo menjadi tautan ke halaman Home */}
+       
         <Link to="/" className="logo">
           Anime Katsumi
         </Link>

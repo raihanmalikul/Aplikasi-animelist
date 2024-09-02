@@ -15,7 +15,7 @@
 
 .carousel-image-container {
   width: 100%;
-  height: 200px; /* Adjust the height for your carousel */
+  height: 200px; 
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -38,31 +38,31 @@
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Prevent text overflow */
+  text-overflow: ellipsis;
 }
 
 .carousel-item:hover .carousel-image {
   transform: scale(1.05);
 }
 
-/* Responsiveness with Media Queries */
+
 @media (max-width: 768px) {
   .carousel-image-container {
-    height: 150px; /* Adjust height for smaller screens */
+    height: 150px; 
   }
 
   .carousel-title {
-    font-size: 12px; /* Reduce font size for smaller screens */
+    font-size: 12px; 
   }
 }
 
 @media (max-width: 480px) {
   .carousel-image-container {
-    height: 120px; /* Further adjust height for very small screens */
+    height: 120px; 
   }
 
   .carousel-title {
-    font-size: 10px; /* Further reduce font size for very small screens */
+    font-size: 10px; 
     padding: 2px;
   }
 

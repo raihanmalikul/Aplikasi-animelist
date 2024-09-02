@@ -1,12 +1,12 @@
-/* src/components/Header.css */
+
 
 .header {
-  background-color: #4f4d4d; /* Warna latar belakang header */
+  background-color: #4f4d4d; 
   padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* Membungkus elemen saat ruang terbatas */
+  flex-wrap: wrap;
 }
 
 .header-content {
@@ -14,7 +14,7 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  flex-wrap: wrap; /* Membungkus konten header saat layar lebih kecil */
+  flex-wrap: wrap; 
 }
 
 .logo {
@@ -24,19 +24,19 @@
   text-decoration: none;
   margin: 0;
   display: flex;
-  align-items: center; /* Menyelaraskan logo secara vertikal */
+  align-items: center; 
 }
 
 .logo-image {
-  height: 50px; /* Atur tinggi sesuai kebutuhan */
-  width: auto; /* Otomatis mengatur lebar berdasarkan proporsi */
+  height: 50px; 
+  width: auto; 
 }
 
 .navigation {
   display: flex;
   align-items: center;
-  flex-grow: 1; /* Memungkinkan navigasi untuk tumbuh dan menempati ruang yang tersedia */
-  justify-content: flex-end; /* Pindahkan navigasi ke kanan */
+  flex-grow: 1;
+  justify-content: flex-end; 
 }
 
 .nav-list {
@@ -85,47 +85,47 @@
   background-color: #777;
 }
 
-/* Media queries untuk responsivitas */
+
 @media (max-width: 768px) {
   .header-content {
-    flex-direction: column; /* Susun konten header menjadi kolom pada layar kecil */
-    align-items: flex-start; /* Ratakan konten ke kiri */
+    flex-direction: column; 
+    align-items: flex-start; 
   }
 
   .navigation {
     margin-top: 10px;
     width: 100%;
-    justify-content: center; /* Pusatkan navigasi pada layar kecil */
+    justify-content: center; 
   }
 
   .nav-list {
-    flex-direction: column; /* Susun daftar navigasi menjadi kolom */
-    gap: 10px; /* Kurangi jarak antar item */
-    align-items: center; /* Pusatkan item navigasi */
+    flex-direction: column; 
+    gap: 10px; 
+    align-items: center; 
   }
 
   .search-form {
     margin: 10px 0;
-    width: 100%; /* Perluas form pencarian pada layar kecil */
-    justify-content: center; /* Pusatkan form pencarian */
+    width: 100%; 
+    justify-content: center; 
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    font-size: 20px; /* Kurangi ukuran font logo pada layar yang sangat kecil */
+    font-size: 20px; 
   }
 
   .nav-list a {
-    font-size: 14px; /* Kurangi ukuran font link navigasi */
+    font-size: 14px; 
   }
 
   .search-form input {
-    width: 80%; /* Sesuaikan lebar input pencarian untuk layar kecil */
+    width: 80%; 
   }
 
   .search-form button {
-    font-size: 12px; /* Kurangi ukuran font tombol pencarian */
-    padding: 4px 8px; /* Kurangi padding untuk tombol */
+    font-size: 12px; 
+    padding: 4px 8px; 
   }
 }

@@ -1,22 +1,21 @@
-// src/components/TopAnime.js
+
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_ANIME_DATA } from '../queries';
 import DOMPurify from 'dompurify';
-import AnimeModal from './AnimeModal'; // Import komponen modal
+import AnimeModal from './AnimeModal'; 
 import './AnimeList.css';
 
 const TopAnime = () => {
-  const [page, setPage] = useState(1); // State untuk halaman saat ini
-  const [animeList, setAnimeList] = useState([]); // State untuk menyimpan daftar anime
-  const [selectedAnime, setSelectedAnime] = useState(null); // State untuk anime yang dipilih
+  const [page, setPage] = useState(1); 
+  const [animeList, setAnimeList] = useState([]); 
+  const [selectedAnime, setSelectedAnime] = useState(null); 
 
-  // Query untuk mengambil data anime
+  
   const { loading, error, data, fetchMore } = useQuery(GET_ANIME_DATA, {
     variables: { page, perPage: 20 },
     notifyOnNetworkStatusChange: true,
     onCompleted: (data) => {
-      // Gabungkan data baru dengan data lama
       setAnimeList((prevList) => [...prevList, ...data.trending.media]);
     },
   });
@@ -24,10 +23,8 @@ const TopAnime = () => {
   const cleanDescription = (description) => {
     return DOMPurify.sanitize(description, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] });
   };
-
-  // Fungsi untuk memuat lebih banyak data
   const loadMore = () => {
-    setPage((prevPage) => prevPage + 1); // Tingkatkan halaman
+    setPage((prevPage) => prevPage + 1); 
     fetchMore({
       variables: {
         page: page + 1,
@@ -47,7 +44,7 @@ const TopAnime = () => {
           <div 
             key={anime.id} 
             className="anime-card"
-            onClick={() => setSelectedAnime(anime)} // Setel anime yang dipilih saat card diklik
+            onClick={() => setSelectedAnime(anime)} 
           >
             <img src={anime.coverImage.large} alt={anime.title.romaji} className="anime-card-image" />
             <div className="anime-card-content">
@@ -62,10 +59,8 @@ const TopAnime = () => {
         ))}
       </div>
 
-      {/* Tampilkan Modal jika anime dipilih */}
       {selectedAnime && <AnimeModal anime={selectedAnime} onClose={() => setSelectedAnime(null)} />}
 
-      {/* Tombol Load More */}
       {!loading && (
         <button className="load-more-button" onClick={loadMore}>
           Load More

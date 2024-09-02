@@ -10,10 +10,10 @@ import './AnimeList.css';
 
 const AnimeList = () => {
   const [selectedAnime, setSelectedAnime] = useState(null);
-  const [animeLimit, setAnimeLimit] = useState(10); // State untuk mengelola jumlah anime yang ditampilkan
+  const [animeLimit, setAnimeLimit] = useState(10); 
 
   const { loading, error, data } = useQuery(GET_ANIME_DATA, {
-    variables: { page: 1, perPage: animeLimit }, // Variabel perPage untuk mengatur jumlah data
+    variables: { page: 1, perPage: animeLimit }, 
     notifyOnNetworkStatusChange: true,
   });
 
@@ -27,7 +27,7 @@ const AnimeList = () => {
   };
 
   const loadMoreAnime = () => {
-    setAnimeLimit(animeLimit + 10); // Tambahkan 10 anime lagi saat tombol "Load More" diklik
+    setAnimeLimit(animeLimit + 10); 
   };
 
   if (loading) return <p>Loading...</p>;
@@ -35,13 +35,13 @@ const AnimeList = () => {
 
   return (
     <div className="anime-content">
-      {/* Carousel untuk Top Trending Anime */}
+     
       <section className="carousel-section">
         <h2>Top Trending Anime</h2>
         <AnimeCarousel animes={data.trending.media} />
       </section>
 
-      {/* Grid untuk Top Trending Anime */}
+      
       <section className="anime-list-grid">
         <h2>Top Trending Anime</h2>
         <div className="anime-grid">
@@ -73,13 +73,13 @@ const AnimeList = () => {
             </div>
           ))}
         </div>
-        {/* Tombol Load More */}
+       
         <button className="load-more-button" >
         <Link to="/trending-now">Tampilkan lebih banyak</Link>
         </button>
       </section>
 
-      {/* Grid untuk Popular Now */}
+      
       <section className="anime-list-grid">
         <h2>Popular Now</h2>
         <div className="anime-grid">
@@ -111,13 +111,13 @@ const AnimeList = () => {
             </div>
           ))}
         </div>
-        {/* Tombol Load More untuk Popular Now */}
+        
         <button className="load-more-button" >
         <Link to="/top-anime">Tampilkan lebih banyak</Link>
         </button>
       </section>
 
-      {/* Tampilkan Modal jika anime dipilih */}
+     
       {selectedAnime && (
         <AnimeModal anime={selectedAnime} onClose={() => setSelectedAnime(null)} />
       )}

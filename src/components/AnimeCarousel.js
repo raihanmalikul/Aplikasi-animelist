@@ -1,8 +1,8 @@
 // src/components/AnimeCarousel.js
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import CSS untuk carousel
-import './AnimeCarousel.css'; // Import CSS khusus untuk styling carousel
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import './AnimeCarousel.css'; 
 
 const AnimeCarousel = ({ animes }) => {
   return (
@@ -13,7 +13,7 @@ const AnimeCarousel = ({ animes }) => {
       showStatus={false}
       emulateTouch
       centerMode
-      centerSlidePercentage={25} // Adjust to fit your design
+      centerSlidePercentage={25} 
       dynamicHeight={false}
     >
       {animes.map((anime) => (
@@ -26,7 +26,6 @@ const AnimeCarousel = ({ animes }) => {
             />
           </div>
           <div className="carousel-title">
-            {/* Trim the title to fit in one line */}
             <p>{anime.title.romaji.length > 30 ? anime.title.romaji.slice(0, 30) + '...' : anime.title.romaji}</p>
           </div>
         </div>
