@@ -1,0 +1,125 @@
+/* src/components/Footer.css */
+
+/* Styling utama untuk footer */
+.footer {
+  background-color: #4f4d4d; /* Warna latar belakang footer */
+  color: #cccccc; /* Warna teks default */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+/* Bagian untuk pengaturan tema */
+.footer-section {
+  flex: 1 1 200px;
+  margin-right: 20px;
+  margin-bottom: 20px; /* Tambahkan margin bawah untuk spasi antar bagian pada layar kecil */
+}
+
+.footer-title {
+  color: #3b82f6; /* Warna biru untuk judul footer */
+  margin-bottom: 10px;
+}
+
+/* Opsi tema di footer */
+.theme-options {
+  display: flex;
+  gap: 5px;
+}
+
+.theme-button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.theme-button.dark {
+  background-color: #000;
+}
+
+.theme-button.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.theme-button.custom {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Tata letak tautan di footer */
+.footer-links {
+  display: flex;
+  flex: 2 1 500px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* Tambahkan margin bawah untuk spasi antar bagian pada layar kecil */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #cccccc;
+  text-decoration: none;
+  transition: color 0.2s ease; /* Efek transisi untuk hover */
+}
+
+.footer-links a:hover {
+  color: #ffffff; /* Warna saat di-hover */
+}
+
+/* Copyright di bagian bawah footer */
+.footer-copyright {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Media queries untuk responsivitas */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Susun footer menjadi kolom pada layar yang lebih kecil */
+    text-align: center; /* Pusatkan teks untuk tampilan yang lebih rapi */
+  }
+
+  .footer-section, .footer-links, .footer-copyright {
+    flex: 1 1 100%;
+    margin-bottom: 10px; /* Tambahkan margin untuk spasi antar bagian */
+  }
+
+  .footer-links {
+    justify-content: center; /* Pusatkan tautan pada layar kecil */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px; /* Kurangi padding untuk layar yang lebih kecil */
+  }
+
+  .footer-title {
+    font-size: 16px; /* Kurangi ukuran font judul footer pada layar kecil */
+  }
+
+  .theme-button {
+    padding: 3px 8px; /* Sesuaikan ukuran tombol tema untuk layar yang lebih kecil */
+    font-size: 10px; /* Kurangi ukuran font tombol tema */
+  }
+}
